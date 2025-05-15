@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Model.DTO.Create;
+using Model.Models;
 
 namespace Settings.AutoMapper;
 
@@ -6,6 +8,7 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        // CreateMap<CreateUsuarioDTO, Usuario>().ReverseMap();
+        CreateMap<CreateEnderecoDTO, Endereco>().ReverseMap();
+
     }
 }

@@ -17,10 +17,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Models\Model.csproj" />
+    <ProjectReference Include="..\Services\Service.csproj" />
   </ItemGroup>
 
 </Project>
