@@ -71,11 +71,29 @@ public class TipomercadoriaRepository : ITipomercadoriaRepository
         await db.UpdateAsync(tipoMercadoria);
     }
 
-    public async Task Delete(int id)
+    public async Task DeleteByTipomercadoriaId(int id)
     {
         using var db = _connection;
 
         var tipoMercadoria = await GetByTipomercadoriaId(id);
+
+        if (tipoMercadoria != null) await db.DeleteAsync(tipoMercadoria);
+    }
+
+    public async Task DeleteByDepartamentoId(int id)
+    {
+        using var db = _connection;
+
+        var tipoMercadoria = await GetByDepartamentoId(id);
+
+        if (tipoMercadoria != null) await db.DeleteAsync(tipoMercadoria);
+    }
+
+    public async Task DeleteByEnderecoId(int id)
+    {
+        using var db = _connection;
+
+        var tipoMercadoria = await GetByEnderecoId(id);
 
         if (tipoMercadoria != null) await db.DeleteAsync(tipoMercadoria);
     }

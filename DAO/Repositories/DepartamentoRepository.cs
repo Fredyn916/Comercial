@@ -62,11 +62,20 @@ public  class DepartamentoRepository : IDepartamentoRepository
         await db.UpdateAsync(departamento);
     }
 
-    public async Task Delete(int id)
+    public async Task DeleteByDepartamentoId(int id)
     {
         using var db = _connection;
 
         var departamento = await GetByDepartamentoId(id);
+
+        if (departamento != null) await db.DeleteAsync(departamento);
+    }
+
+    public async Task DeleteByEnderecoId(int id)
+    {
+        using var db = _connection;
+
+        var departamento = await GetByEnderecoId(id);
 
         if (departamento != null) await db.DeleteAsync(departamento);
     }

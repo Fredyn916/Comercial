@@ -1,10 +1,11 @@
-﻿using Model.Models;
+﻿using Model.DTO.Create;
+using Model.Models;
 
-namespace DAO.Interfaces;
+namespace Service.Interfaces;
 
-public interface IDepartamentoRepository
+public interface IDepartamentoService
 {
-    Task Post(Departamento departamento);
+    Task Post(CreateDepartamentoDTO departamentoDTO);
     Task<List<Departamento>> Get();
     Task<Departamento?> GetByDepartamentoId(int id);
     Task<Departamento?> GetByEnderecoId(int id);

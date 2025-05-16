@@ -1,10 +1,11 @@
-﻿using Model.Models;
+﻿using Model.DTO.Create;
+using Model.Models;
 
-namespace DAO.Interfaces;
+namespace Service.Interfaces;
 
-public interface ITipomercadoriaRepository
+public interface ITipomercadoriaService
 {
-    Task Post(Tipomercadoria tipoMercadoria);
+    Task Post(CreateTipomercadoriaDTO tipoMercadoriaDTO);
     Task<List<Tipomercadoria>> Get();
     Task<Tipomercadoria?> GetByTipomercadoriaId(int id);
     Task<Tipomercadoria?> GetByDepartamentoId(int id);
