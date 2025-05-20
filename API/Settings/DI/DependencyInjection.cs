@@ -19,7 +19,7 @@ public static class DependencyInjection
         builder.Services.AddScoped<IMercadoriasRepository, MercadoriasRepository>();
         builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
         builder.Services.AddScoped<IFornecedor_has_MercadoriasRepository, Fornecedor_has_MercadoriasRepository>();
-        builder.Services.AddScoped<ILoginClienteRepository, LoginClienteRepository>();
+        builder.Services.AddScoped<ILoginclienteRepository, LoginclienteRepository>();
         builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
         builder.Services.AddScoped<ITabelaComprasRepository, TabelaComprasRepository>();
         builder.Services.AddScoped<ITabelaComprasMercadoriasRepository, TabelaComprasMercadoriasRepository>();
@@ -34,7 +34,7 @@ public static class DependencyInjection
         builder.Services.AddScoped<IMercadoriasService, MercadoriasService>();
         builder.Services.AddScoped<IFornecedorService, FornecedorService>();
         builder.Services.AddScoped<IFornecedor_has_MercadoriasService, Fornecedor_has_MercadoriasService>();
-        builder.Services.AddScoped<ILoginClienteService, LoginClienteService>();
+        builder.Services.AddScoped<ILoginclienteService, LoginclienteService>();
         builder.Services.AddScoped<IClienteService, ClienteService>();
         builder.Services.AddScoped<ITabelaComprasService, TabelaComprasService>();
         builder.Services.AddScoped<ITabelaComprasMercadoriasService, TabelaComprasMercadoriasService>();
