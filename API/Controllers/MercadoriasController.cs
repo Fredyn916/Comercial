@@ -7,21 +7,21 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class EnderecoController : ControllerBase
+public class MercadoriasController : ControllerBase
 {
-    private readonly IEnderecoService _enderecoService;
+    private readonly IMercadoriasService _mercadoriasService;
 
-    public EnderecoController(IEnderecoService enderecoService)
+    public MercadoriasController(IMercadoriasService mercadoriasService)
     {
-        _enderecoService = enderecoService;
+        _mercadoriasService = mercadoriasService;
     }
 
-    [HttpPost("PostEndereco")]
-    public async Task<IActionResult> Post(CreateEnderecoDTO enderecoDTO)
+    [HttpPost("PostMercadorias")]
+    public async Task<IActionResult> Post(CreateMercadoriasDTO mercadoriaDTO)
     {
         try
         {
-            await _enderecoService.Post(enderecoDTO);
+            await _mercadoriasService.Post(mercadoriaDTO);
             return Ok();
         }
         catch (Exception e)
@@ -30,12 +30,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetEndereco")]
-    public async Task<List<Endereco>> Get()
+    [HttpGet("GetMercadorias")]
+    public async Task<List<Mercadorias>> Get()
     {
         try
         {
-            return await _enderecoService.Get();
+            return await _mercadoriasService.Get();
         }
         catch (Exception e)
         {
@@ -43,12 +43,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetByIdEndereco")]
-    public async Task<Endereco?> GetById(int id)
+    [HttpGet("GetByIdMercadorias")]
+    public async Task<Mercadorias?> GetById(int id)
     {
         try
         {
-            return await _enderecoService.GetById(id);
+            return await _mercadoriasService.GetById(id);
         }
         catch (Exception e)
         {
@@ -56,12 +56,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpPut("PutEndereco")]
-    public async Task<IActionResult> Put(Endereco endereco)
+    [HttpPut("PutMercadorias")]
+    public async Task<IActionResult> Put(Mercadorias mercadoria)
     {
         try
         {
-            await _enderecoService.Put(endereco);
+            await _mercadoriasService.Put(mercadoria);
 
             return NoContent();
         }
@@ -71,12 +71,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteEndereco")]
+    [HttpDelete("DeleteMercadorias")]
     public async Task<IActionResult> Delete(int id)
     {
         try
         {
-            await _enderecoService.Delete(id);
+            await _mercadoriasService.Delete(id);
 
             return Ok();
         }

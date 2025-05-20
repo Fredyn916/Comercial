@@ -7,21 +7,21 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class EnderecoController : ControllerBase
+public class CargosController : ControllerBase
 {
-    private readonly IEnderecoService _enderecoService;
+    private readonly ICargosService _cargosService;
 
-    public EnderecoController(IEnderecoService enderecoService)
+    public CargosController(ICargosService cargosService)
     {
-        _enderecoService = enderecoService;
+        _cargosService = cargosService;
     }
 
-    [HttpPost("PostEndereco")]
-    public async Task<IActionResult> Post(CreateEnderecoDTO enderecoDTO)
+    [HttpPost("PostCargos")]
+    public async Task<IActionResult> Post(CreateCargosDTO cargoDTO)
     {
         try
         {
-            await _enderecoService.Post(enderecoDTO);
+            await _cargosService.Post(cargoDTO);
             return Ok();
         }
         catch (Exception e)
@@ -30,12 +30,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetEndereco")]
-    public async Task<List<Endereco>> Get()
+    [HttpGet("GetCargos")]
+    public async Task<List<Cargos>> Get()
     {
         try
         {
-            return await _enderecoService.Get();
+            return await _cargosService.Get();
         }
         catch (Exception e)
         {
@@ -43,12 +43,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetByIdEndereco")]
-    public async Task<Endereco?> GetById(int id)
+    [HttpGet("GetByIdCargos")]
+    public async Task<Cargos?> GetById(int id)
     {
         try
         {
-            return await _enderecoService.GetById(id);
+            return await _cargosService.GetById(id);
         }
         catch (Exception e)
         {
@@ -56,12 +56,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpPut("PutEndereco")]
-    public async Task<IActionResult> Put(Endereco endereco)
+    [HttpPut("PutCargos")]
+    public async Task<IActionResult> Put(Cargos cargo)
     {
         try
         {
-            await _enderecoService.Put(endereco);
+            await _cargosService.Put(cargo);
 
             return NoContent();
         }
@@ -71,12 +71,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteEndereco")]
+    [HttpDelete("DeleteCargos")]
     public async Task<IActionResult> Delete(int id)
     {
         try
         {
-            await _enderecoService.Delete(id);
+            await _cargosService.Delete(id);
 
             return Ok();
         }

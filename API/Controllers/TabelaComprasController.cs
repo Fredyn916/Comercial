@@ -7,21 +7,21 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class EnderecoController : ControllerBase
+public class TabelaComprasController : ControllerBase
 {
-    private readonly IEnderecoService _enderecoService;
+    private readonly ITabelaComprasService _tabelaComprasService;
 
-    public EnderecoController(IEnderecoService enderecoService)
+    public TabelaComprasController(ITabelaComprasService tabelaComprasService)
     {
-        _enderecoService = enderecoService;
+        _tabelaComprasService = tabelaComprasService;
     }
 
-    [HttpPost("PostEndereco")]
-    public async Task<IActionResult> Post(CreateEnderecoDTO enderecoDTO)
+    [HttpPost("PostTabelaCompras")]
+    public async Task<IActionResult> Post(CreateTabelaComprasDTO tabelaComprasDTO)
     {
         try
         {
-            await _enderecoService.Post(enderecoDTO);
+            await _tabelaComprasService.Post(tabelaComprasDTO);
             return Ok();
         }
         catch (Exception e)
@@ -30,12 +30,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetEndereco")]
-    public async Task<List<Endereco>> Get()
+    [HttpGet("GetTabelaCompras")]
+    public async Task<List<TabelaCompras>> Get()
     {
         try
         {
-            return await _enderecoService.Get();
+            return await _tabelaComprasService.Get();
         }
         catch (Exception e)
         {
@@ -43,12 +43,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetByIdEndereco")]
-    public async Task<Endereco?> GetById(int id)
+    [HttpGet("GetByIdTabelaCompras")]
+    public async Task<TabelaCompras?> GetById(int id)
     {
         try
         {
-            return await _enderecoService.GetById(id);
+            return await _tabelaComprasService.GetById(id);
         }
         catch (Exception e)
         {
@@ -56,12 +56,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpPut("PutEndereco")]
-    public async Task<IActionResult> Put(Endereco endereco)
+    [HttpPut("PutTabelaCompras")]
+    public async Task<IActionResult> Put(TabelaCompras tabelaCompras)
     {
         try
         {
-            await _enderecoService.Put(endereco);
+            await _tabelaComprasService.Put(tabelaCompras);
 
             return NoContent();
         }
@@ -71,12 +71,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteEndereco")]
+    [HttpDelete("DeleteTabelaCompras")]
     public async Task<IActionResult> Delete(int id)
     {
         try
         {
-            await _enderecoService.Delete(id);
+            await _tabelaComprasService.Delete(id);
 
             return Ok();
         }

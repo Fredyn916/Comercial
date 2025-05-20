@@ -7,21 +7,21 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class EnderecoController : ControllerBase
+public class FornecedorController : ControllerBase
 {
-    private readonly IEnderecoService _enderecoService;
+    private readonly IFornecedorService _fornecedorService;
 
-    public EnderecoController(IEnderecoService enderecoService)
+    public FornecedorController(IFornecedorService fornecedorService)
     {
-        _enderecoService = enderecoService;
+        _fornecedorService = fornecedorService;
     }
 
-    [HttpPost("PostEndereco")]
-    public async Task<IActionResult> Post(CreateEnderecoDTO enderecoDTO)
+    [HttpPost("PostFornecedor")]
+    public async Task<IActionResult> Post(CreateFornecedorDTO fornecedorDTO)
     {
         try
         {
-            await _enderecoService.Post(enderecoDTO);
+            await _fornecedorService.Post(fornecedorDTO);
             return Ok();
         }
         catch (Exception e)
@@ -30,12 +30,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetEndereco")]
-    public async Task<List<Endereco>> Get()
+    [HttpGet("GetFornecedor")]
+    public async Task<List<Fornecedor>> Get()
     {
         try
         {
-            return await _enderecoService.Get();
+            return await _fornecedorService.Get();
         }
         catch (Exception e)
         {
@@ -43,12 +43,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetByIdEndereco")]
-    public async Task<Endereco?> GetById(int id)
+    [HttpGet("GetByIdFornecedor")]
+    public async Task<Fornecedor?> GetById(int id)
     {
         try
         {
-            return await _enderecoService.GetById(id);
+            return await _fornecedorService.GetById(id);
         }
         catch (Exception e)
         {
@@ -56,12 +56,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpPut("PutEndereco")]
-    public async Task<IActionResult> Put(Endereco endereco)
+    [HttpPut("PutFornecedor")]
+    public async Task<IActionResult> Put(Fornecedor fornecedor)
     {
         try
         {
-            await _enderecoService.Put(endereco);
+            await _fornecedorService.Put(fornecedor);
 
             return NoContent();
         }
@@ -71,12 +71,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteEndereco")]
+    [HttpDelete("DeleteFornecedor")]
     public async Task<IActionResult> Delete(int id)
     {
         try
         {
-            await _enderecoService.Delete(id);
+            await _fornecedorService.Delete(id);
 
             return Ok();
         }

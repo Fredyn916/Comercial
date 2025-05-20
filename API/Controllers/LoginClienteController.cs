@@ -7,21 +7,21 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class EnderecoController : ControllerBase
+public class LoginClienteController : ControllerBase
 {
-    private readonly IEnderecoService _enderecoService;
+    private readonly ILoginClienteService _loginClienteService;
 
-    public EnderecoController(IEnderecoService enderecoService)
+    public LoginClienteController(ILoginClienteService loginClienteService)
     {
-        _enderecoService = enderecoService;
+        _loginClienteService = loginClienteService;
     }
 
-    [HttpPost("PostEndereco")]
-    public async Task<IActionResult> Post(CreateEnderecoDTO enderecoDTO)
+    [HttpPost("PostLoginCliente")]
+    public async Task<IActionResult> Post(CreateLoginClienteDTO loginClienteDTO)
     {
         try
         {
-            await _enderecoService.Post(enderecoDTO);
+            await _loginClienteService.Post(loginClienteDTO);
             return Ok();
         }
         catch (Exception e)
@@ -30,12 +30,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetEndereco")]
-    public async Task<List<Endereco>> Get()
+    [HttpGet("GetLoginCliente")]
+    public async Task<List<LoginCliente>> Get()
     {
         try
         {
-            return await _enderecoService.Get();
+            return await _loginClienteService.Get();
         }
         catch (Exception e)
         {
@@ -43,12 +43,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetByIdEndereco")]
-    public async Task<Endereco?> GetById(int id)
+    [HttpGet("GetByIdLoginCliente")]
+    public async Task<LoginCliente?> GetById(int id)
     {
         try
         {
-            return await _enderecoService.GetById(id);
+            return await _loginClienteService.GetById(id);
         }
         catch (Exception e)
         {
@@ -56,12 +56,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpPut("PutEndereco")]
-    public async Task<IActionResult> Put(Endereco endereco)
+    [HttpPut("PutLoginCliente")]
+    public async Task<IActionResult> Put(LoginCliente loginCliente)
     {
         try
         {
-            await _enderecoService.Put(endereco);
+            await _loginClienteService.Put(loginCliente);
 
             return NoContent();
         }
@@ -71,12 +71,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteEndereco")]
+    [HttpDelete("DeleteLoginCliente")]
     public async Task<IActionResult> Delete(int id)
     {
         try
         {
-            await _enderecoService.Delete(id);
+            await _loginClienteService.Delete(id);
 
             return Ok();
         }

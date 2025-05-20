@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Model.DTO.Create;
 using Model.Models;
 using Service.Interfaces;
 
@@ -7,21 +6,21 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class EnderecoController : ControllerBase
+public class EmpresaController : ControllerBase
 {
-    private readonly IEnderecoService _enderecoService;
+    private readonly IEmpresaService _empresaService;
 
-    public EnderecoController(IEnderecoService enderecoService)
+    public EmpresaController(IEmpresaService empresaService)
     {
-        _enderecoService = enderecoService;
+        _empresaService = empresaService;
     }
 
-    [HttpPost("PostEndereco")]
-    public async Task<IActionResult> Post(CreateEnderecoDTO enderecoDTO)
+    [HttpPost("PostEmpresa")]
+    public async Task<IActionResult> Post(Empresa empresa)
     {
         try
         {
-            await _enderecoService.Post(enderecoDTO);
+            await _empresaService.Post(empresa);
             return Ok();
         }
         catch (Exception e)
@@ -30,12 +29,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetEndereco")]
-    public async Task<List<Endereco>> Get()
+    [HttpGet("GetEmpresa")]
+    public async Task<List<Empresa>> Get()
     {
         try
         {
-            return await _enderecoService.Get();
+            return await _empresaService.Get();
         }
         catch (Exception e)
         {
@@ -43,12 +42,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetByIdEndereco")]
-    public async Task<Endereco?> GetById(int id)
+    [HttpGet("GetByCNPJEmpresa")]
+    public async Task<Empresa?> GetByCNPJ(int cnpj)
     {
         try
         {
-            return await _enderecoService.GetById(id);
+            return await _empresaService.GetByCNPJ(cnpj);
         }
         catch (Exception e)
         {
@@ -56,12 +55,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpPut("PutEndereco")]
-    public async Task<IActionResult> Put(Endereco endereco)
+    [HttpPut("PutEmpresa")]
+    public async Task<IActionResult> Put(Empresa empresa)
     {
         try
         {
-            await _enderecoService.Put(endereco);
+            await _empresaService.Put(empresa);
 
             return NoContent();
         }
@@ -71,12 +70,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteEndereco")]
-    public async Task<IActionResult> Delete(int id)
+    [HttpDelete("DeleteEmpresa")]
+    public async Task<IActionResult> Delete(int cnpj)
     {
         try
         {
-            await _enderecoService.Delete(id);
+            await _empresaService.Delete(cnpj);
 
             return Ok();
         }

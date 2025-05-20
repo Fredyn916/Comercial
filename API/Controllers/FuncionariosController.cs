@@ -7,21 +7,21 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class EnderecoController : ControllerBase
+public class FuncionariosController : ControllerBase
 {
-    private readonly IEnderecoService _enderecoService;
+    private readonly IFuncionariosService _funcionariosService;
 
-    public EnderecoController(IEnderecoService enderecoService)
+    public FuncionariosController(IFuncionariosService funcionariosService)
     {
-        _enderecoService = enderecoService;
+        _funcionariosService = funcionariosService;
     }
 
-    [HttpPost("PostEndereco")]
-    public async Task<IActionResult> Post(CreateEnderecoDTO enderecoDTO)
+    [HttpPost("PostFuncionarios")]
+    public async Task<IActionResult> Post(CreateFuncionariosDTO funcionarioDTO)
     {
         try
         {
-            await _enderecoService.Post(enderecoDTO);
+            await _funcionariosService.Post(funcionarioDTO);
             return Ok();
         }
         catch (Exception e)
@@ -30,12 +30,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetEndereco")]
-    public async Task<List<Endereco>> Get()
+    [HttpGet("GetFuncionarios")]
+    public async Task<List<Funcionarios>> Get()
     {
         try
         {
-            return await _enderecoService.Get();
+            return await _funcionariosService.Get();
         }
         catch (Exception e)
         {
@@ -43,12 +43,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpGet("GetByIdEndereco")]
-    public async Task<Endereco?> GetById(int id)
+    [HttpGet("GetByIdFuncionarios")]
+    public async Task<Funcionarios?> GetById(int id)
     {
         try
         {
-            return await _enderecoService.GetById(id);
+            return await _funcionariosService.GetById(id);
         }
         catch (Exception e)
         {
@@ -56,12 +56,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpPut("PutEndereco")]
-    public async Task<IActionResult> Put(Endereco endereco)
+    [HttpPut("PutFuncionarios")]
+    public async Task<IActionResult> Put(Funcionarios funcionario)
     {
         try
         {
-            await _enderecoService.Put(endereco);
+            await _funcionariosService.Put(funcionario);
 
             return NoContent();
         }
@@ -71,12 +71,12 @@ public class EnderecoController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteEndereco")]
+    [HttpDelete("DeleteFuncionarios")]
     public async Task<IActionResult> Delete(int id)
     {
         try
         {
-            await _enderecoService.Delete(id);
+            await _funcionariosService.Delete(id);
 
             return Ok();
         }
