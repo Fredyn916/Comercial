@@ -3,11 +3,11 @@ using Model.Models;
 
 namespace Service.Interfaces;
 
-public interface ILoginClienteService
+public interface ILoginclienteService
 {
-    Task Post(CreateLoginClienteDTO loginClienteDTO);
-    Task<List<LoginCliente>> Get();
-    Task<LoginCliente?> GetById(int id);
-    Task Put(LoginCliente loginCliente);
+    Task Post(CreateLoginclienteDTO loginClienteDTO);
+    Task<List<Logincliente>> Get();
+    Task<Logincliente?> GetById(int id);
+    Task Put(Logincliente loginCliente);
     Task Delete(int id);
 }

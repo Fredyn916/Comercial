@@ -17,7 +17,7 @@ public class MappingProfile : Profile
         CreateMap<CreateTipomercadoriaDTO, Tipomercadoria>().ReverseMap();
         CreateMap<CreateMercadoriasDTO, Mercadorias>().ReverseMap();
         CreateMap<CreateFornecedorDTO, Fornecedor>().ReverseMap();
-        CreateMap<CreateLoginClienteDTO, LoginCliente>().ReverseMap();
+        CreateMap<CreateLoginclienteDTO, Logincliente>().ReverseMap();
         CreateMap<CreateTabelaComprasDTO, TabelaCompras>().ReverseMap();
         CreateMap<CreateTabelaComprasMercadoriasDTO, TabelaComprasMercadorias>().ReverseMap();
     }

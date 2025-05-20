@@ -6,35 +6,35 @@ using Service.Interfaces;
 
 namespace Service.Services;
 
-public class LoginClienteService : ILoginClienteService
+public class LoginclienteService : ILoginclienteService
 {
-    private readonly ILoginClienteRepository _loginClienteRepository;
+    private readonly ILoginclienteRepository _loginClienteRepository;
     private readonly IMapper _mapper;
 
-    public LoginClienteService(ILoginClienteRepository loginClienteRepository, IMapper mapper)
+    public LoginclienteService(ILoginclienteRepository loginClienteRepository, IMapper mapper)
     {
         _loginClienteRepository = loginClienteRepository;
         _mapper = mapper;
     }
 
-    public async Task Post(CreateLoginClienteDTO loginClienteDTO)
+    public async Task Post(CreateLoginclienteDTO loginClienteDTO)
     {
-        var loginCliente = _mapper.Map<LoginCliente>(loginClienteDTO);
+        var loginCliente = _mapper.Map<Logincliente>(loginClienteDTO);
 
         await _loginClienteRepository.Post(loginCliente);
     }
 
-    public async Task<List<LoginCliente>> Get()
+    public async Task<List<Logincliente>> Get()
     {
         return await _loginClienteRepository.Get();
     }
 
-    public async Task<LoginCliente?> GetById(int id)
+    public async Task<Logincliente?> GetById(int id)
     {
         return await _loginClienteRepository.GetById(id);
     }
 
-    public async Task Put(LoginCliente loginCliente)
+    public async Task Put(Logincliente loginCliente)
     {
         await _loginClienteRepository.Put(loginCliente);
     }

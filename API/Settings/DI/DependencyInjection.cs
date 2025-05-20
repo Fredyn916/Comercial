@@ -25,5 +25,18 @@ public static class DependencyInjection
         builder.Services.AddScoped<ITabelaComprasMercadoriasRepository, TabelaComprasMercadoriasRepository>();
 
         builder.Services.AddScoped<IEnderecoService, EnderecoService>();
+        builder.Services.AddScoped<IEmpresaService, EmpresaService>();
+        builder.Services.AddScoped<IDepartamentoService, DepartamentoService>();
+        builder.Services.AddScoped<ICargosService, CargosService>();
+        builder.Services.AddScoped<IFuncionariosService, FuncionariosService>();
+        builder.Services.AddScoped<ILognService, LognService>();
+        builder.Services.AddScoped<ITipomercadoriaService, TipomercadoriaService>();
+        builder.Services.AddScoped<IMercadoriasService, MercadoriasService>();
+        builder.Services.AddScoped<IFornecedorService, FornecedorService>();
+        builder.Services.AddScoped<IFornecedor_has_MercadoriasService, Fornecedor_has_MercadoriasService>();
+        builder.Services.AddScoped<ILoginClienteService, LoginClienteService>();
+        builder.Services.AddScoped<IClienteService, ClienteService>();
+        builder.Services.AddScoped<ITabelaComprasService, TabelaComprasService>();
+        builder.Services.AddScoped<ITabelaComprasMercadoriasService, TabelaComprasMercadoriasService>();
     }
 }

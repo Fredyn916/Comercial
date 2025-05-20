@@ -7,17 +7,17 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class LoginClienteController : ControllerBase
+public class LoginclienteController : ControllerBase
 {
-    private readonly ILoginClienteService _loginClienteService;
+    private readonly ILoginclienteService _loginClienteService;
 
-    public LoginClienteController(ILoginClienteService loginClienteService)
+    public LoginclienteController(ILoginclienteService loginClienteService)
     {
         _loginClienteService = loginClienteService;
     }
 
-    [HttpPost("PostLoginCliente")]
-    public async Task<IActionResult> Post(CreateLoginClienteDTO loginClienteDTO)
+    [HttpPost("PostLogincliente")]
+    public async Task<IActionResult> Post(CreateLoginclienteDTO loginClienteDTO)
     {
         try
         {
@@ -30,8 +30,8 @@ public class LoginClienteController : ControllerBase
         }
     }
 
-    [HttpGet("GetLoginCliente")]
-    public async Task<List<LoginCliente>> Get()
+    [HttpGet("GetLogincliente")]
+    public async Task<List<Logincliente>> Get()
     {
         try
         {
@@ -43,8 +43,8 @@ public class LoginClienteController : ControllerBase
         }
     }
 
-    [HttpGet("GetByIdLoginCliente")]
-    public async Task<LoginCliente?> GetById(int id)
+    [HttpGet("GetByIdLogincliente")]
+    public async Task<Logincliente?> GetById(int id)
     {
         try
         {
@@ -56,8 +56,8 @@ public class LoginClienteController : ControllerBase
         }
     }
 
-    [HttpPut("PutLoginCliente")]
-    public async Task<IActionResult> Put(LoginCliente loginCliente)
+    [HttpPut("PutLogincliente")]
+    public async Task<IActionResult> Put(Logincliente loginCliente)
     {
         try
         {
@@ -71,7 +71,7 @@ public class LoginClienteController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteLoginCliente")]
+    [HttpDelete("DeleteLogincliente")]
     public async Task<IActionResult> Delete(int id)
     {
         try
