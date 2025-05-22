@@ -43,7 +43,7 @@ public class EmpresaController : ControllerBase
     }
 
     [HttpGet("GetByCNPJEmpresa")]
-    public async Task<Empresa?> GetByCNPJ(int cnpj)
+    public async Task<Empresa?> GetByCNPJ(string cnpj)
     {
         try
         {
@@ -71,7 +71,7 @@ public class EmpresaController : ControllerBase
     }
 
     [HttpDelete("DeleteEmpresa")]
-    public async Task<IActionResult> Delete(int cnpj)
+    public async Task<IActionResult> Delete(string cnpj)
     {
         try
         {

@@ -2,7 +2,7 @@
 
 public class CreateEnderecoDTO
 {
-    public required int CEP { get; set; }
+    public required string CEP { get; set; }
     public int? TipoVia { get; set; }
     public string? NomeVia { get; set; }
     public string? Numero { get; set; }

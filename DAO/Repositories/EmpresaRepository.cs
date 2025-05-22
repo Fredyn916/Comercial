@@ -36,7 +36,7 @@ public class EmpresaRepository : IEmpresaRepository
         return empresas.ToList();
     }
 
-    public async Task<Empresa?> GetByCNPJ(int cnpj)
+    public async Task<Empresa?> GetByCNPJ(string cnpj)
     {
         using var db = _connection;
 
@@ -50,7 +50,7 @@ public class EmpresaRepository : IEmpresaRepository
         await db.UpdateAsync(empresa);
     }
 
-    public async Task Delete(int cnpj)
+    public async Task Delete(string cnpj)
     {
         using var db = _connection;
 

@@ -24,7 +24,7 @@ public class EmpresaService : IEmpresaService
         return await _empresaRepository.Get();
     }
 
-    public async Task<Empresa?> GetByCNPJ(int cnpj)
+    public async Task<Empresa?> GetByCNPJ(string cnpj)
     {
         return await _empresaRepository.GetByCNPJ(cnpj);
     }
@@ -34,7 +34,7 @@ public class EmpresaService : IEmpresaService
         await _empresaRepository.Put(empresa);
     }
 
-    public async Task Delete(int cnpj)
+    public async Task Delete(string cnpj)
     {
         await _empresaRepository.Delete(cnpj);
     }

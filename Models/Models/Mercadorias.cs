@@ -19,5 +19,5 @@ public class Mercadorias
     public required int TipoMercadoria_idTipoMercadoria { get; set; }
     public required int TipoMercadoria_Departamento_idDepartamento { get; set; }
     public required int TipoMercadoria_Departamento_Endereco_IdEndereco { get; set; }
-    public required int Empresa_CNPJ { get; set; }
+    public required string Empresa_CNPJ { get; set; }
 }

@@ -32,9 +32,11 @@ public class Fornecedor_has_MercadoriasRepository : IFornecedor_has_MercadoriasR
     {
         using var db = _connection;
 
-        var fornecedorHasMercadorias = await db.GetAllAsync<Fornecedor_has_Mercadorias>();
+        var sql = "SELECT * FROM fornecedor_has_mercadorias";
 
-        return fornecedorHasMercadorias.ToList();
+        var result = await _connection.QueryAsync<Fornecedor_has_Mercadorias>(sql);
+
+        return result.ToList();
     }
 
     public async Task<Fornecedor_has_Mercadorias?> GetByFornecedorId(int id)

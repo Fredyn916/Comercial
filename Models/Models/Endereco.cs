@@ -7,7 +7,7 @@ public class Endereco
 {
     [Key]
     public int IdEndereco { get; set; }
-    public required int CEP { get; set; }
+    public required string CEP { get; set; }
     public int? TipoVia { get; set; }
     public string? NomeVia { get; set; }
     public string? Numero { get; set; }

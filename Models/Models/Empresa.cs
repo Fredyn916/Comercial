@@ -6,7 +6,7 @@ namespace Model.Models;
 public class Empresa
 {
     [ExplicitKey]
-    public required int CNPJ { get; set; }
+    public required string CNPJ { get; set; }
     public string? RazaoSocial { get; set; }
     public string? NomeFantasia { get; set; }
     public string? TelefoneEmpresa { get; set; }

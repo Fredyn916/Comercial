@@ -6,7 +6,7 @@ public interface IEmpresaRepository
 {
     Task Post(Empresa empresa);
     Task<List<Empresa>> Get();
-    Task<Empresa?> GetByCNPJ(int cnpj);
+    Task<Empresa?> GetByCNPJ(string cnpj);
     Task Put(Empresa empresa);
-    Task Delete(int cnpj);
+    Task Delete(string cnpj);
 }
